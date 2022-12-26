@@ -1,8 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Product;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +11,6 @@ use App\Http\Livewire\Product;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('blog')->group(function() {
+    Route::get('/', 'BlogController@index');
 });
-
-
-Route::get('/product', Product::class);
